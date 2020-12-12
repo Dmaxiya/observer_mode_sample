@@ -14,18 +14,18 @@ int main() {
     // ccBoard 与 sBoard 都会更新，aqiBoard 不会更新
     temperature = 25;
     humidity = 0.9;
-    wd.MesurementChange(&temperature, &humidity, NULL);
+    wd.mesurementChange(&temperature, &humidity, NULL);
 
     temperature = 26;
-    wd.MesurementChange(&temperature, NULL, NULL);
+    wd.mesurementChange(&temperature, NULL, NULL);
 
     // ccBoard 会更新，sBoard 和 aqiBoard 都不会更新
     temperature = 25.5;
-    wd.MesurementChange(&temperature, NULL, NULL);
+    wd.mesurementChange(&temperature, NULL, NULL);
 
     // ccBoard 和 sBoard 都不会更新，aqiBoard 会更新
     aqi = 50;
-    wd.MesurementChange(NULL, NULL, &aqi);
+    wd.mesurementChange(NULL, NULL, &aqi);
 
     return 0;
 }

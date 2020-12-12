@@ -24,7 +24,7 @@ public:
         updateTimes = 0;
     }
 
-    void MesurementChange(double *temperature, double *humidity, double *aqi) {
+    void mesurementChange(double *temperature, double *humidity, double *aqi) {
         if (temperature != NULL) {
             this->temperature = *temperature;
         }
