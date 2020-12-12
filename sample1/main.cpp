@@ -19,5 +19,13 @@ int main() {
     temperature = 26;
     wd.MesurementChange(&temperature, NULL, NULL);
 
+    // ccBoard 会更新，sBoard 和 aqiBoard 都不会更新
+    temperature = 25.5;
+    wd.MesurementChange(&temperature, NULL, NULL);
+
+    // ccBoard 和 sBoard 都不会更新，aqiBoard 会更新
+    aqi = 50;
+    wd.MesurementChange(NULL, NULL, &aqi);
+
     return 0;
 }

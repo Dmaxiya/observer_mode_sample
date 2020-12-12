@@ -6,7 +6,6 @@ weatherData::weatherData(currentConditionDisplayBoard &ccBoard, statisticsDispla
     updateTimes = 0;
 }
 
-
 void weatherData::MesurementChange(double *temperature, double *humidity, double *aqi) {
     if (temperature != NULL) {
         this->temperature = *temperature;
