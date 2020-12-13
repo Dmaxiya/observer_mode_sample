@@ -13,7 +13,10 @@ private:
     weatherData &wd;
 
 public:
-    currentConditionDisplayBoard(weatherData &wd): wd(wd) {}
+    currentConditionDisplayBoard(weatherData &wd): wd(wd) {
+        temperature = 0;
+        humidity = 0;
+    }
 
     void update() {
         double temperature = wd.getTemperature();

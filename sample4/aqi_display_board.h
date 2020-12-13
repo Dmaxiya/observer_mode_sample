@@ -3,13 +3,21 @@
 
 #include "observer.h"
 #include "weather_data.h"
-#include "util.h"
 #include <cstdio>
 
 class aqiDisplayBoard: public observer {
 private:
     double aqi;
-    weatherData &wd;
+
+    bool getInfo(const void *changeInfo) {
+        const weatherData::changeInfo *ci = reinterpret_cast<const weatherData::changeInfo*>(changeInfo);
+        if (ci->aqi == NULL) {
+            return true;
+        }
+
+        aqi = *(ci->aqi);
+        return false;
+    }
 
     int getLevel() {
         if (aqi <= 0) {
@@ -25,17 +33,16 @@ private:
     }
 
 public:
-    aqiDisplayBoard(weatherData &wd): wd(wd) {
+    aqiDisplayBoard() {
         aqi = 0;
     }
 
-    void update() {
-        double aqi = wd.getAQI();
-        if (util::equal(aqi, this->aqi)) {
+    void update(const void *changeInfo) {
+        bool skip = getInfo(changeInfo);
+        if (skip) {
             return ;
         }
 
-        this->aqi = aqi;
         printf("================== AQI Display Board ===================\n");
         printf("\taqi: %.1f\t\tlevel: %d\n\n", aqi, getLevel());
     }
