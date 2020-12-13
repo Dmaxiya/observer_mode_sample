@@ -21,7 +21,12 @@ private:
 public:
     weatherData(currentConditionDisplayBoard &ccBoard, statisticsDisplayBoard &sBoard, aqiDisplayBoard &aqiBoard):
         ccBoard(ccBoard), sBoard(sBoard), aqiBoard(aqiBoard) {
+
         updateTimes = 0;
+
+        temperature = 0;
+        humidity = 0;
+        aqi = 0;
     }
 
     void mesurementChange(double *temperature, double *humidity, double *aqi) {

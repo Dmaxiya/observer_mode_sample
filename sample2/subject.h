@@ -7,19 +7,19 @@
 
 class subject {
 private:
-    std::vector<observer*> observers;
+    std::vector<observer*> os;
 
 public:
     void attach(observer *o) {
-        observers.push_back(o);
+        os.push_back(o);
     }
 
     void detach(observer *o) {
-        observers.erase(std::remove(observers.begin(), observers.end(), o), observers.end());
+        os.erase(std::remove(os.begin(), os.end(), o), os.end());
     }
 
     void notify() {
-        for (auto o: observers) {
+        for (auto o: os) {
             o->update();
         }
     }
