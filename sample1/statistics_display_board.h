@@ -3,6 +3,7 @@
 
 #include <limits>
 #include <algorithm>
+#include <cstdio>
 
 class statisticsDisplayBoard {
 private:

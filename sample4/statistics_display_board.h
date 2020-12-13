@@ -3,6 +3,9 @@
 
 #include "observer.h"
 #include "weather_data.h"
+#include <algorithm>
+#include <limits>
+#include <cstdio>
 
 class statisticsDisplayBoard: public observer {
 private:

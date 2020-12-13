@@ -3,6 +3,7 @@
 
 #include "observer.h"
 #include "weather_data.h"
+#include <cmath>
 #include "util.h"
 #include <cstdio>
 

@@ -3,6 +3,7 @@
 
 #include "observer.h"
 #include "weather_data.h"
+#include <cstdio>
 
 class currentConditionDisplayBoard: public observer {
 private:

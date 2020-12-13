@@ -4,6 +4,7 @@
 #include "observer.h"
 #include "weather_data.h"
 #include <cmath>
+#include <cstdio>
 
 class aqiDisplayBoard: public observer {
 private:
