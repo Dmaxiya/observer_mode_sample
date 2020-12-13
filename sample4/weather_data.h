@@ -31,7 +31,7 @@ public:
     }
 
     void mesurementChange(double *temperature, double *humidity, double *aqi) {
-        void *ci = new changeInfo(temperature, humidity, aqi);
+        changeInfo *ci = new changeInfo(temperature, humidity, aqi);
 
         if (temperature != NULL) {
             this->temperature = *temperature;
