@@ -33,7 +33,7 @@ int main() {
     aqi = 50;
     wd.mesurementChange(NULL, NULL, &aqi);
 
-    // aqiBoard 取消订阅，关于 aqi 的更新将不会出发 aqiBoard 的刷新显示
+    // aqiBoard 取消订阅，关于 aqi 的更新将不会触发 aqiBoard 的刷新显示
     wd.detach(&aqiBoard);
     aqi = 300;
     wd.mesurementChange(NULL, NULL, &aqi);
